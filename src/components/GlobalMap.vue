@@ -52,7 +52,7 @@
             </span>
           </div>
           <div class="hidden sm:block text-[#42beef]">
-            GRID: 139.76° E / 35.68° N [TOKYO-Z16]
+            GRID: 139.76° E / 35.68° N [TOKYO-Z17]
           </div>
         </div>
 
@@ -144,7 +144,7 @@
               <circle r="6" fill="#ffffff" />
               <!-- Label -->
               <rect x="18" y="-12" width="130" height="24" rx="2" fill="#111111" fill-opacity="0.9" stroke="#42beef" stroke-width="1" />
-              <text x="24" y="4" fill="#ffffff" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="bold">TOKYO Z16 SYSPLEX</text>
+              <text x="24" y="4" fill="#ffffff" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="bold">TOKYO Z17 SYSPLEX</text>
               <text x="24" y="24" fill="#42be65" font-family="'IBM Plex Mono', monospace" font-size="10">84.2k TPS • 0.22ms</text>
             </g>
 

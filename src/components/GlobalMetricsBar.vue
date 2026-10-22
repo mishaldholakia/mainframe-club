@@ -51,8 +51,8 @@
           <span class="text-[11px] font-mono text-[#8a3ffc]">tx/day</span>
         </div>
         <div class="flex items-center justify-between text-[10px] text-[#8d8d8d] font-mono mt-1">
-          <span>Telum II: {{ state.metrics.telumInferenceTime }}ms</span>
-          <span class="text-[#42beef]">Zero Bus Lag</span>
+          <span>Telum II + Spyre AI</span>
+          <span class="text-[#42beef]">&lt;0.8ms Ensemble</span>
         </div>
       </div>
 

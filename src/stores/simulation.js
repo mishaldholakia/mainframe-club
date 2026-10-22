@@ -57,10 +57,10 @@ export const state = reactive({
       geoY: 38.5,
       tps: 84200,
       ping: 0.22,
-      cores: 128,
+      cores: 144,
       status: 'optimal',
       ficonLinks: 64,
-      model: 'IBM z16 A02 Dual-DC',
+      model: 'IBM z17 A02 Dual-DC (with Spyre AI Cluster)',
       cicsRegions: 48,
       db2Group: 'DSN1PLEX',
       encryption: 'Kyber-1024 Quantum-Safe'
@@ -74,10 +74,10 @@ export const state = reactive({
       geoY: 34.0,
       tps: 48100,
       ping: 64.2,
-      cores: 64,
+      cores: 72,
       status: 'optimal',
       ficonLinks: 48,
-      model: 'IBM z16 A01',
+      model: 'IBM z17 A01 (with Spyre AI)',
       cicsRegions: 32,
       db2Group: 'DSN2PLEX',
       encryption: 'Kyber-1024 Quantum-Safe'
@@ -94,7 +94,7 @@ export const state = reactive({
       cores: 48,
       status: 'optimal',
       ficonLinks: 36,
-      model: 'IBM z16 A01',
+      model: 'IBM z17 A01',
       cicsRegions: 24,
       db2Group: 'DSN3PLEX',
       encryption: 'Kyber-1024 Quantum-Safe'
@@ -108,10 +108,10 @@ export const state = reactive({
       geoY: 57.0,
       tps: 21900,
       ping: 38.1,
-      cores: 32,
+      cores: 36,
       status: 'optimal',
       ficonLinks: 24,
-      model: 'IBM z16 A01',
+      model: 'IBM z17 A01',
       cicsRegions: 18,
       db2Group: 'DSN4PLEX',
       encryption: 'Kyber-1024 Quantum-Safe'
@@ -125,10 +125,10 @@ export const state = reactive({
       geoY: 28.0,
       tps: 18400,
       ping: 120.4,
-      cores: 32,
+      cores: 36,
       status: 'optimal',
       ficonLinks: 24,
-      model: 'IBM z16 A01',
+      model: 'IBM z17 A01',
       cicsRegions: 16,
       db2Group: 'DSN5PLEX',
       encryption: 'Kyber-1024 Quantum-Safe'
@@ -145,7 +145,7 @@ export const state = reactive({
       cores: 24,
       status: 'optimal',
       ficonLinks: 16,
-      model: 'IBM z16 A01',
+      model: 'IBM z17 A01',
       cicsRegions: 12,
       db2Group: 'DSN6PLEX',
       encryption: 'Kyber-1024 Quantum-Safe'
@@ -172,8 +172,8 @@ export const state = reactive({
       id: 1,
       sender: 'assistant',
       time: '12:00:01 JST',
-      textEn: 'IBM Z Mission Control initialized. All 6 global financial nodes connected to Tokyo Dual-Active Sysplex. Telum II AI coprocessors operating at 0.72ms inference latency. How can I assist with your z/OS environment today?',
-      textJa: 'IBM Z Mission Control を起動しました。全世界6大金融拠点が東京デュアルアクティブ・シスプレックスに接続完了。Telum II AIコプロセッサは平均0.72msの超低遅延で100%全件推論を実施しています。本日の運用診断やチューニングのご指示を入力してください。',
+      textEn: 'IBM Z Mission Control initialized. All 6 global financial nodes connected to Tokyo z17 Dual-Active Sysplex. Telum II on-chip accelerators and IBM Spyre PCIe AI cards operating at 0.72ms inference latency. How can I assist with your z/OS environment today?',
+      textJa: 'IBM Z Mission Control を起動しました。全世界6大金融拠点が東京 z17 デュアルアクティブ・シスプレックスに接続完了。Telum II オンチップアクセラレータと IBM Spyre™ PCIe AIカード群が連動し、100%全件リアルタイム推論を実施しています。本日の運用診断やチューニングのご指示を入力してください。',
       code: null,
       action: null
     }
@@ -440,9 +440,9 @@ export function injectScenario(scenarioId) {
       id: Date.now(),
       sender: 'assistant',
       time: timestamp,
-      textEn: '🚨 [CRITICAL ALERT] Sudden 500,000+ TPS Flash Crowd detected across Tokyo & New York gateways. WLM automatically promoting CICS transactions to Importance Level 1 and allocating spare zIIP engines.',
-      textJa: '🚨【緊急アラート】東京およびニューヨークのゲートウェイで 50万TPS 超のフラッシュクラウド急増を検知。z/OS Workload Manager (WLM) が自動発動し、CICSオンライントランザクションを最重要度1に昇格、zIIPプロセッサーをフル動員して遅延を0.88ms以内に抑え込んでいます。',
-      code: '/* WLM Policy Dynamic Modification */\nSET WLM=SPX_PROD_PEAK\nDISPLAY WLM,SERVICE_CLASS=CICS_HOT',
+      textEn: '🚨 [CRITICAL ALERT] Sudden 500,000+ TPS Flash Crowd detected across Tokyo & New York gateways. WLM automatically promoting CICS transactions to Importance Level 1 and allocating IBM Spyre AI neural streams.',
+      textJa: '🚨【緊急アラート】東京およびニューヨークのゲートウェイで 50万TPS 超のフラッシュクラウド急増を検知。z/OS Workload Manager (WLM) が自動発動し、CICSオンライントランザクションを最重要度1に昇格、IBM Spyre AI推論スレッドをフル動員して遅延を0.88ms以内に抑え込んでいます。',
+      code: '/* WLM Policy Dynamic Modification for z17 */\nSET WLM=SPX_PROD_PEAK\nF SPYRE_AI,ALLOCATE_CORES=ALL\nDISPLAY WLM,SERVICE_CLASS=CICS_HOT',
       action: 'wlm_autoscale'
     })
   } else if (scenarioId === 'fraud') {
@@ -452,9 +452,9 @@ export function injectScenario(scenarioId) {
       id: Date.now(),
       sender: 'assistant',
       time: timestamp,
-      textEn: '⚠️ [CYBER SECURITY] Coordinated global ATM spoofing attack detected targeting Tokyo Megabanks and London City ATMs. IBM Telum On-Chip AI has stepped up inline neural evaluation. 100% of anomalous payloads are being quarantined with 0ms latency impact.',
-      textJa: '⚠️【セキュリティ警戒】東京メガバンクおよびロンドン拠点を標的とした協調型ATM偽造カード不正攻撃を検知。IBM Telum オンチップAIアクセラレータが全件リアルタイム照合を実施し、高リスク取引を自動遮断中。正規決済への影響はゼロです。',
-      code: '/* Telum Real-Time Fraud Quarantine */\nF TELUM_AI,QUARANTINE_OVERSEAS_SIM\nF CICS_PAY,ENFORCE_MFA_STEPUP',
+      textEn: '⚠️ [CYBER SECURITY] Coordinated global ATM spoofing attack detected targeting Tokyo Megabanks and London City ATMs. IBM Telum II On-Chip AI & IBM Spyre Cards have engaged ensemble neural evaluation. 100% of anomalous payloads are being quarantined with 0ms latency impact.',
+      textJa: '⚠️【セキュリティ警戒】東京メガバンクおよびロンドン拠点を標的とした協調型ATM偽造カード不正攻撃を検知。IBM Telum II と IBM Spyre AIカードがアンサンブル深層学習照合を発動し、高リスク取引を自動遮断中。正規決済への影響はゼロです。',
+      code: '/* Telum II & Spyre Real-Time Fraud Quarantine */\nF TELUM_AI,QUARANTINE_OVERSEAS_SIM\nF SPYRE_ACCEL,ENGAGE_ENSEMBLE_MODEL\nF CICS_PAY,ENFORCE_MFA_STEPUP',
       action: 'fraud_quarantine'
     })
   } else if (scenarioId === 'power') {
@@ -533,22 +533,22 @@ export function sendAiMessage(userText) {
       replyEn = `Current Sysplex Coupling Facility link latency is 0.08ms with 0.02% lock contention. Buffer cache hit ratio on CF01 (Otemachi) and CF02 (Makuhari) is 99.88%. Recommended action: No tuning required; link capacity is optimal.`
       replyJa = `現在のカップリング・ファシリティ (CF) リンク遅延は 0.08ms、ロック競合率は 0.02% と極めて良好です。CF01 (大手町) および CF02 (幕張) のキャッシュヒット率は 99.88% です。現時点でチューニングの必要はなく、最適なスループットを維持しています。`
       snippet = 'D XCF,STRUCTURE,STRNAME=*\nD GRS,CONTENTION'
-    } else if (lower.includes('telum') || lower.includes('fraud') || userText.includes('不正') || userText.includes('推論') || userText.includes('ai')) {
-      replyEn = `IBM Telum II integrated AI accelerator is processing ${state.metrics.tps.toLocaleString()} inferences/sec with average execution time of ${state.metrics.telumInferenceTime}ms. Zero PCIe bus penalty achieved via direct 256MB virtual L3/L4 cache connection.`
-      replyJa = `IBM Telum II 統合オンチップAIアクセラレータは、現在 毎秒 ${state.metrics.tps.toLocaleString()} 件のインフライト推論を平均 ${state.metrics.telumInferenceTime}ms で処理中。256MB 仮想L3/L4キャッシュ直結によりPCIe遅延を完全排除しています。`
-      snippet = 'F TELUM_AI,QUERY,DETAIL\nF WLM,DISPLAY_AI_ROUTING'
+    } else if (lower.includes('telum') || lower.includes('spyre') || lower.includes('fraud') || userText.includes('不正') || userText.includes('推論') || userText.includes('ai') || userText.includes('スパイア')) {
+      replyEn = `IBM Telum II + IBM Spyre Accelerator cluster is processing ${state.metrics.tps.toLocaleString()} inferences/sec with average execution time of ${state.metrics.telumInferenceTime}ms. Dual-tier architecture combines Telum II on-chip sub-millisecond fraud scoring with Spyre 32-core PCIe accelerator cards for multi-modal foundation models.`
+      replyJa = `IBM Telum II および IBM Spyre™ アクセラレータ・クラスタは、現在 毎秒 ${state.metrics.tps.toLocaleString()} 件のインフライト推論を平均 ${state.metrics.telumInferenceTime}ms で処理中。Telum II によるオンチップ・サブミリ秒不正検知と、Spyre カード (32コア/75W) による基盤モデル・生成AI処理の2層ハイブリッド構成が稼働しています。`
+      snippet = 'F TELUM_AI,QUERY,DETAIL\nF SPYRE_ACCEL,DISPLAY_CLUSTER_LOAD\nF WLM,DISPLAY_AI_ROUTING'
     } else if (lower.includes('jcl') || userText.includes('JCL') || userText.includes('ワークロード')) {
-      replyEn = `Generated dynamic JCL snippet for dynamic capacity reallocation and CICS high-priority transaction routing.`
-      replyJa = `動的キャパシティ再配分および CICS 高優先度トランザクションルーティング用の JCL テンプレートを生成しました。`
-      snippet = `//Z16TUNE  JOB (ACCT#),'AI-OPS AUTO-TUNE',CLASS=A,MSGCLASS=X\n//STEP1    EXEC PGM=IWMWSL\n//SYSIN    DD *\n  SET SERVICE_CLASS(CICS_HOT) IMPORTANCE(1)\n  ALLOCATE ENGINES(zIIP=ALL, CP=DYNAMIC)\n/*`
+      replyEn = `Generated dynamic JCL snippet for dynamic capacity reallocation, IBM Spyre AI thread allocation, and CICS high-priority transaction routing on IBM z17.`
+      replyJa = `IBM z17 向けの動的キャパシティ再配分、IBM Spyre AI推論スレッド割り当て、および CICS 高優先度トランザクションルーティング用の JCL テンプレートを生成しました。`
+      snippet = `//Z17TUNE  JOB (ACCT#),'SPYRE-AI AUTO-TUNE',CLASS=A,MSGCLASS=X\n//STEP1    EXEC PGM=IWMWSL\n//SYSIN    DD *\n  SET SERVICE_CLASS(CICS_HOT) IMPORTANCE(1)\n  ALLOCATE ENGINES(zIIP=ALL, SPYRE=CLUSTER_ACTIVE, CP=DYNAMIC)\n/*`
     } else if (lower.includes('quantum') || lower.includes('pqc') || userText.includes('耐量子') || userText.includes('暗号') || userText.includes('ficon')) {
       replyEn = `Quantum-Safe Cryptography Audit: 100% of active FICON channels and CPACF hardware engines are running NIST FIPS 203 (ML-KEM / Kyber-1024) and FIPS 204 (ML-DSA / Dilithium). Quantum harvest risk is zero.`
       replyJa = `耐量子暗号 (PQC) 監査結果: 稼働中の全FICONチャネルおよびCPACF暗号化エンジンにおいて、NIST標準 FIPS 203 (ML-KEM / Kyber-1024) および FIPS 204 (ML-DSA / Dilithium) が 100% 有効です。将来の量子解読脅威に対して完全防御されています。`
       snippet = 'D ICSF,CRYPTOMK\nD ICSF,PQC_AUDIT'
     } else {
-      replyEn = `Telemetry scan completed for query "${userText}". All z/OS 3.1 subsystems (CICS, IMS, Db2 13 for z/OS, MQ) are meeting SLA goals at 100.0%. Telum on-chip inference pipeline is synchronized.`
-      replyJa = `ご質問「${userText}」に関するテレメトリ診断を実施しました。すべての z/OS 3.1 サブシステム (CICS, IMS, Db2 13 for z/OS, MQ) はサービス目標達成率 100.0% で推移しています。Telum II AIパイプラインも正常です。`
-      snippet = 'D A,L\nD OPDATA,MONITOR'
+      replyEn = `Telemetry scan completed for query "${userText}". All IBM z17 and z/OS 3.1 subsystems (CICS, IMS, Db2 13 for z/OS, MQ) are meeting SLA goals at 100.0%. Telum II + Spyre AI accelerator pipeline is synchronized.`
+      replyJa = `ご質問「${userText}」に関するテレメトリ診断を実施しました。すべての IBM z17 / z/OS 3.1 サブシステム (CICS, IMS, Db2 13 for z/OS, MQ) はサービス目標達成率 100.0% で推移しています。Telum II と Spyre AIパイプラインも完全同期しています。`
+      snippet = 'D A,L\nD OPDATA,MONITOR\nD SPYRE,STATUS'
     }
 
     state.aiMessages.push({

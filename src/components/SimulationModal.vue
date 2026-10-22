@@ -30,9 +30,9 @@
       <!-- Briefing Description -->
       <div class="my-5 space-y-3 text-xs font-mono text-[#f4f4f4] leading-relaxed">
         <p>
-          {{ state.lang === 'ja' 
-            ? '本シミュレータは、IBM z16 および Telum II プロセッサが支える日本の社会金融インフラ（全銀システム、CAFIS、メガバンク勘定系）における、AIリアルタイム不正検知と自律運用の未来を体験できる対話型管制デモです。' 
-            : 'Experience the future of AI-powered mainframe operations supporting critical Japanese banking infrastructure (Zengin, CAFIS, Megabank Core Banking) with inline Telum II fraud prevention and autonomous self-healing.' 
+          {{ state.lang === 'ja'
+            ? '本シミュレータは、IBM z17、Telum II プロセッサ、および IBM Spyre™ PCIe 加速カードが支える日本の社会金融インフラ（全銀システム、CAFIS、メガバンク勘定系）における、AIリアルタイム不正検知と自律運用の未来を体験できる対話型管制デモです。'
+            : 'Experience the future of AI-powered mainframe operations on IBM z17 with Telum II on-chip AI and IBM Spyre™ PCIe accelerator cards supporting critical Japanese banking infrastructure with sub-millisecond fraud prevention and autonomous self-healing.'
           }}
         </p>
 

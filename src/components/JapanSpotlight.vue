@@ -41,7 +41,7 @@
           <span class="text-[#42beef]">■</span>
           {{ state.lang === 'ja' ? '大手町 ⇄ 幕張 デュアルアクティブ GDPS 構成' : 'Otemachi ⇄ Makuhari Dual-Active GDPS Metro Topology' }}
         </h3>
-        <span class="text-xs font-mono text-[#8d8d8d]">IBM z16™ A02 Enterprise Frame</span>
+        <span class="text-xs font-mono text-[#42beef] font-semibold">IBM z17™ Multi-Frame (Telum II + Spyre Cards)</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center">
@@ -62,8 +62,8 @@
               <span class="text-white">64 Cores @ 5.5 GHz</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-[#8d8d8d]">Telum AI Coprocessor</span>
-              <span class="text-[#42be65]">8 Chips (Online)</span>
+              <span class="text-[#8d8d8d]">Telum II + Spyre Cards</span>
+              <span class="text-[#42be65]">8 Chips + 24 Spyre Cards</span>
             </div>
             <div class="flex justify-between">
               <span class="text-[#8d8d8d]">CICS / IMS Subsystems</span>
@@ -104,8 +104,8 @@
               <span class="text-white">64 Cores @ 5.5 GHz</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-[#8d8d8d]">Telum AI Coprocessor</span>
-              <span class="text-[#42be65]">8 Chips (Online)</span>
+              <span class="text-[#8d8d8d]">Telum II + Spyre Cards</span>
+              <span class="text-[#42be65]">8 Chips + 24 Spyre Cards</span>
             </div>
             <div class="flex justify-between">
               <span class="text-[#8d8d8d]">CICS / IMS Subsystems</span>

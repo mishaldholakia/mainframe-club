@@ -68,13 +68,14 @@
           <span v-if="state.activeScenario" class="w-2 h-2 rounded-full bg-[#fa4d56] animate-ping"></span>
         </button>
 
-        <!-- Tab 7: Telum II Hardware -->
-        <button 
+        <!-- Tab 7: z17 & Spyre Hardware -->
+        <button
           @click="switchTab('hardware')"
           :class="['px-3.5 py-2 rounded text-xs font-mono font-medium flex items-center gap-2 whitespace-nowrap transition-all border', state.activeTab === 'hardware' ? 'bg-[#0f62fe] border-[#42beef] text-white shadow-[0_0_12px_rgba(15,98,254,0.4)]' : 'bg-[#161616] border-[#262626] text-[#8d8d8d] hover:text-white hover:border-[#393939]']"
         >
           <span>🔬</span>
           <span>{{ t.tabHardware }}</span>
+          <span class="px-1.5 py-0.2 text-[9px] bg-[#8a3ffc]/20 text-[#8a3ffc] rounded font-semibold border border-[#8a3ffc]/40">SPYRE™</span>
         </button>
 
       </div>
@@ -101,14 +102,14 @@
         <div class="flex items-center gap-3">
           <span class="text-[#0f62fe] font-bold">IBM Z® Mission Control</span>
           <span>•</span>
-          <span>IBM z16™ (Machine Type 3931)</span>
+          <span>IBM z17™ (Next-Gen Machine Type 3932)</span>
           <span>•</span>
           <span>z/OS® Version 3 Release 1</span>
           <span>•</span>
           <span class="text-[#42be65]">GDPS® Metro Active</span>
         </div>
         <div class="flex items-center gap-4">
-          <span class="text-[#42beef]">Telum™ II AI On-Chip Coprocessor</span>
+          <span class="text-[#42beef]">Telum™ II On-Chip AI & IBM Spyre™ PCIe Cards</span>
           <span>•</span>
           <span>NIST Post-Quantum Cryptography</span>
         </div>

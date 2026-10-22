@@ -28,11 +28,11 @@
               <span class="text-[#42beef] text-glow-cyan font-semibold">MISSION CONTROL</span>
             </h1>
             <span class="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono bg-[#0f62fe]/15 text-[#42beef] border border-[#0f62fe]/40">
-              z/OS 3.1 • Telum II
+              IBM z17 • Telum II & Spyre™
             </span>
           </div>
           <p class="text-xs text-[#8d8d8d] hidden md:block">
-            {{ state.lang === 'ja' ? '次世代メインフレーム AI運用司令センター • 東京デュアルSysplex' : 'Next-Gen Mainframe AI Operations Command Center • Tokyo Sysplex' }}
+            {{ state.lang === 'ja' ? '次世代メインフレーム AI運用司令センター • 東京 z17 デュアルSysplex' : 'Next-Gen Mainframe AI Operations Command Center • Tokyo z17 Sysplex' }}
           </p>
         </div>
       </div>
